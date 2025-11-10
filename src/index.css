@@ -1,0 +1,25 @@
+/* DELETE this line:
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap');
+*/
+
+/* ADD this line to import the correct fonts:
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+/* Add Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You have a background pattern defined here AND in your tailwind.config.js.
+  You should choose one. I recommend keeping the one in the config file.
+  You can probably DELETE this:
+*/
+@layer utilities {
+  .bg-geometric-pattern {
+    background-color: theme('colors.off-white');
+    background-image: linear-gradient(135deg, theme('colors.gray.100') 10%, transparent 10%), 
+                      linear-gradient(225deg, theme('colors.gray.100') 10%, transparent 10%);
+    background-size: 20px 20px;
+  }
+}

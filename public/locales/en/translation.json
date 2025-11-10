@@ -1,0 +1,151 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "expertise": "Expertise",
+    "projects": "Projects",
+    "contact": "Contact Us"
+  },
+  "topBar": {
+    "phone": "+971 6 5343100",
+    "email": "info@knights.com",
+    "address": "Sharjah - United Arab Emirates"
+  },
+  "hero": [
+    {
+      "title": "Knights Engineering",
+      "subtitle": "Forging the Future of Engineering & Construction."
+    },
+    {
+      "title": "Engineering Excellence",
+      "subtitle": "Delivering complex projects with precision and quality."
+    },
+    {
+      "title": "Turnkey EPC Solutions",
+      "subtitle": "Your trusted partner from concept to commission."
+    }
+  ],
+  "buttons": {
+    "exploreMore": "Explore More",
+    "learnMore": "Learn More About Us",
+    "viewAllExpertise": "View All Expertise",
+    "seeAllProjects": "See All Projects",
+    "readMore": "READ MORE",
+    "sendMessage": "Send Message",
+    "chatOnWhatsApp": "Chat with us on WhatsApp"
+  },
+  "aboutSummary": {
+    "title": "About Knights Engineering",
+    "subtitle": "With a modest beginning in the UAE, Knights Engineering has transformed into a dynamic and fast-growing company, providing complete end-to-end solutions from conceptual design to commissioning.",
+    "text": "Our commitment to delivering projects on time, within budget, and to the highest quality standards is demonstrated by our track record and motivated team."
+  },
+  "values": {
+    "title": "Our Core Values",
+    "subtitle": "The principles that guide our work and define our character.",
+    "safety": "Safety First",
+    "safetyDesc": "Prioritizing the well-being of our people and partners above all.",
+    "quality": "Uncompromising Quality",
+    "qualityDesc": "Delivering excellence and precision in every task we undertake.",
+    "integrity": "Integrity",
+    "integrityDesc": "Building trust through honest, transparent, and ethical conduct.",
+    "innovation": "Innovation",
+    "innovationDesc": "Embracing new technologies and ideas to find better solutions."
+  },
+  "stats": {
+    "projects": "Projects Completed",
+    "experience": "Years of Experience",
+    "clients": "Happy Clients",
+    "experts": "Skilled Experts"
+  },
+  "expertise": {
+    "title": "Our Expertise",
+    "subtitle": "We offer comprehensive solutions across a wide range of industries, driving innovation, infrastructure development, and engineering excellence.",
+    "items": [
+      { "title": "EPC Works", "description": "Full-range EPC services from conceptual design to commissioning." },
+      { "title": "Design Engineering", "description": "In-house design engineering team delivers innovative, cost-effective solutions." },
+      { "title": "Offshore Works", "description": "Extensive experience in offshore fabrication and installation projects." },
+      { "title": "Steel Fabrication", "description": "State-of-the-art steel fabrication division for all structural needs." },
+      { "title": "Civil Construction", "description": "Civil construction services designed to meet diverse project needs." },
+      { "title": "MEP Works", "description": "A wide range of mechanical, electrical, and plumbing (MEP) services." }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Take a look at some of our successfully completed projects across the Middle East and Africa.",
+    "items": [
+      { "title": "Storage Terminals" },
+      { "title": "Pressure Vessels" },
+      { "title": "Jetty Pipeline" },
+      { "title": "Topside Modules" },
+      { "title": "Port Terminals" },
+      { "title": "Marine Loading Arms" },
+      { "title": "Offshore Platform" },
+      { "title": "Modular Packages" }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Our success is measured by the satisfaction and success of our partners.",
+    "items": [
+      {
+        "quote": "Knights Engineering's attention to detail and commitment to safety were outstanding. They delivered our project on time and exceeded our quality expectations.",
+        "name": "Ahmed Al Mansoori",
+        "company": "CEO, Gulf Petrochem"
+      },
+      {
+        "quote": "The professionalism and expertise of the Knights team were evident from day one. They are a reliable partner for complex industrial projects.",
+        "name": "Fatima Al Hashimi",
+        "company": "Project Director, ADNOC"
+      }
+    ]
+  },
+  "clients": {
+    "title": "Respected Clients",
+    "subtitle": "We are proud to have worked with leading organizations across the globe."
+  },
+  "footer": {
+    "about": "Knights Engineering is a dynamic and fast-growing company providing end-to-end solutions in engineering, procurement, and construction.",
+    "links": "Quick Links",
+    "contact": "Contact Company",
+    "newsletter": "Newsletter",
+    "newsletterSub": "Get updates about our latest projects and innovations.",
+    "emailPlaceholder": "Your Email Address",
+    "copyright": "© {year} Knights Engineering. All Rights Reserved."
+  },
+  "pageHeaders": {
+    "aboutTitle": "About Us",
+    "aboutSubtitle": "Pioneering Engineering Solutions",
+    "expertiseTitle": "Our Expertise",
+    "expertiseSubtitle": "Delivering Comprehensive Engineering Solutions",
+    "projectsTitle": "Our Projects",
+    "projectsSubtitle": "A Showcase of Our Successfully Completed Work",
+    "contactTitle": "Contact Us",
+    "contactSubtitle": "Get in Touch with Our Team"
+  },
+  "aboutPage": {
+    "title": "Who We Are",
+    "subtitle": "With a modest beginning in the UAE, Knights Engineering has transformed into a dynamic and fast-growing company, providing complete end-to-end solutions from conceptual design to commissioning.",
+    "text": "Our commitment to delivering projects on time, within budget, and to the highest quality standards is demonstrated by our track record and motivated team. We foster a culture of safety, quality, and innovation in all our operations.",
+    "listItem1": "Dedicated Team Of Experts",
+    "listItem2": "Ahead of Time Delivery",
+    "listItem3": "Multi-industry Services Under One Group",
+    "mission": "Our Mission",
+    "missionText": "To deliver high-quality, cost-effective projects safely and on schedule, while fostering long-term relationships with our clients.",
+    "vision": "Our Vision",
+    "visionText": "To be the partner of choice for comprehensive engineering and construction solutions in the region and beyond.",
+    "values": "Our Values",
+    "valuesText": "Integrity, Safety, Quality, and Innovation. These principles guide every decision we make and every action we take."
+  },
+  "contactPage": {
+    "formTitle": "Send Us a Message",
+    "infoTitle": "Contact Information",
+    "infoText": "We're open for any suggestion or just to have a chat. Feel free to reach out to us during our office hours.",
+    "addressTitle": "Our Address",
+    "callTitle": "Call Us",
+    "emailTitle": "Email Us",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formSubject": "Subject",
+    "formMessage": "Message"
+  }
+}
