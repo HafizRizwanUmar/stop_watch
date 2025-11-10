@@ -29,7 +29,6 @@ function FormInput({ label, value, onChange, placeholder, className = '', type =
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        // Use default 'font-sans'. If you installed @tailwindcss/forms, remove 'bg-gray-900 border-gray-700'
         className="block w-full rounded-lg bg-gray-900 border-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500"
       />
     </div>
@@ -61,14 +60,14 @@ function MinimalistClock({ timeInMs, title3, title3FontSize }) {
 
   return (
     <div className="flex flex-col items-center">
-      {/* The Clock - Use the 'serif' display font */}
+      {/* The Clock */}
       <div
-        className="text-8xl md:text-9xl font-light text-white/90 font-serif" // Added font-serif
+        className="text-8xl md:text-9xl font-light text-white/90 font-serif"
       >
         {formattedTime}
       </div>
 
-      {/* Title 3 (Under Clock) - Use 'sans-serif' for readability */}
+      {/* Title 3 (Under Clock) */}
       {title3 && (
         <h3
           className="font-sans mt-4 text-white/90 [text-shadow:_0_1px_3px_rgb(0_0_0_/_50%)]"
@@ -81,25 +80,20 @@ function MinimalistClock({ timeInMs, title3, title3FontSize }) {
   );
 }
 
-// --- 2. The Main Display Component (Simplified Layout) ---
+// --- 2. The Main Display Component ---
 function CountdownDisplay({
-  // Config Props
   staticBackground,
   title1, title2,
-  // Style Props
   title1FontSize, title2FontSize,
-  // Component Props
   clockProps,
-  // Control Props
   isPreview = false, isRunning,
   onPreviewStart, onPreviewStop, onPreviewReset,
   onExit, onToggleFullscreen
 }) {
   return (
     <div
-      className="relative w-full h-full flex flex-col items-center justify-center gap-16 p-4 md:p-10 text-white overflow-hidden font-sans" // Apply 'font-sans' as the default
+      className="relative w-full h-full flex flex-col items-center justify-center gap-16 p-4 md:p-10 text-white overflow-hidden font-sans"
       style={{
-        // Strengthened overlay for better contrast
         backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${staticBackground})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -134,11 +128,11 @@ function CountdownDisplay({
         </div>
       )}
 
-      {/* --- Top Titles - Use the 'serif' display font --- */}
+      {/* --- Top Titles --- */}
       <div className="w-full text-center z-10 [text-shadow:_0_2px_4px_rgb(0_0_0_/_70%)] font-serif">
         {title1 && (
           <h1
-            className="font-bold" // Use 'font-bold' from Playfair Display
+            className="font-bold"
             style={{ fontSize: `${title1FontSize}px` }}
           >
             {title1}
@@ -146,7 +140,7 @@ function CountdownDisplay({
         )}
         {title2 && (
           <h2
-            className="font-bold" // Use 'font-bold' from Playfair Display
+            className="font-bold"
             style={{ fontSize: `${title2FontSize}px`, opacity: 0.8 }}
           >
             {title2}
@@ -164,12 +158,8 @@ function CountdownDisplay({
 }
 
 
-// --- 3. Main App Component (Simplified) ---
-
-// --- ⬇️ EDIT YOUR STATIC ASSETS HERE ⬇️ ---
+// --- 3. Main App Component ---
 const STATIC_BACKGROUND = '/background.png'; // Place in /public/background.png
-// --- ⬆️ EDIT YOUR STATIC ASSETS HERE ⬆️ ---
-
 
 export default function App() {
   const [mode, setMode] = useState('setup'); // 'setup' or 'running'
@@ -181,8 +171,8 @@ export default function App() {
   const [title3, setTitle3] = useState('We are live in...');
 
   // --- Styling (Sizes Only) ---
-  const [title1FontSize, setTitle1FontSize] = useState(48); // Increased default for 'Playfair Display'
-  const [title2FontSize, setTitle2FontSize] = useState(30); // Increased default
+  const [title1FontSize, setTitle1FontSize] = useState(48);
+  const [title2FontSize, setTitle2FontSize] = useState(30);
   const [title3FontSize, setTitle3FontSize] = useState(18);
 
   // --- Timer State ---
@@ -191,21 +181,19 @@ export default function App() {
   const intervalRef = useRef(null);
   const appContainerRef = useRef(null);
 
-  // --- POLISHED Timer Logic (Countdown) ---
+  // --- Timer Logic ---
   useEffect(() => {
     if (isRunning) {
       intervalRef.current = setInterval(() => {
         setTime((prevTime) => {
-          // Check if 1 second (1000ms) or less is left
           if (prevTime <= 1000) {
             clearInterval(intervalRef.current);
             setIsRunning(false);
             return 0;
           }
-          // Subtract 1 second (1000ms)
           return prevTime - 1000;
         });
-      }, 1000); // Tick every 1 second (1000ms)
+      }, 1000);
     } else if (!isRunning && intervalRef.current) {
       clearInterval(intervalRef.current);
     }
@@ -213,26 +201,27 @@ export default function App() {
   }, [isRunning]);
 
   // --- Handlers ---
+  
+  // ✅ **FIX 1: Wrap handleReset in useCallback**
   const handleReset = useCallback(() => {
     setIsRunning(false);
     setTime(countdownMinutes * 60 * 1000);
-  }, [countdownMinutes]); // ✅ FIX: Added dependency
+  }, [countdownMinutes]); // Add 'countdownMinutes' as a dependency
 
+  // ✅ **FIX 2: Wrap togglePlay in useCallback**
   const togglePlay = useCallback(() => {
     setIsRunning(prev => !prev);
-  }, []); // ✅ FIX: Empty dependency array is correct
+  }, []); // Empty array, this function is stable
 
-  // --- LIVE Keyboard Listener (Hardcoded Keys) ---
+  // --- LIVE Keyboard Listener ---
   useEffect(() => {
     if (mode !== 'running') return;
 
     const handleKeyDown = (e) => {
-      // Spacebar toggles Play/Pause
       if (e.key === ' ') {
         e.preventDefault();
         togglePlay();
       }
-      // 'r' key resets
       if (e.key === 'r' || e.key === 'R') {
         e.preventDefault();
         handleReset();
@@ -241,7 +230,9 @@ export default function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [mode, isRunning, handleReset, togglePlay]); // ✅ FIX: Added dependencies
+
+  // ✅ **FIX 3: Add the functions to the dependency array**
+  }, [mode, isRunning, handleReset, togglePlay]);
 
 
   const handleLaunch = () => {
@@ -296,7 +287,6 @@ export default function App() {
       <div className="flex-1 bg-gray-800 h-full overflow-hidden">
         <CountdownDisplay
           {...displayProps}
-          // Ensure preview resets to full time when 'countdownMinutes' changes
           clockProps={{
             ...clockProps,
             timeInMs: isRunning || time !== (countdownMinutes * 60 * 1000) ? time : (countdownMinutes * 60 * 1000),
@@ -345,7 +335,7 @@ export default function App() {
               label="Title 1 Size (px)"
               type="number"
               value={title1FontSize}
-              onChange={(val) => setTitle1FontSize(Number(val) || 0)} // Added '|| 0' to prevent NaN
+              onChange={(val) => setTitle1FontSize(Number(val) || 0)}
             />
             <FormInput
               label="Title 2 Size (px)"
